@@ -18,7 +18,7 @@ void setup()
     {
         Serial.printf("[SETUP] WAIT %d...\n", t);
         Serial.flush();
-        delay(1000);
+        delay(500);
     }
 
     WiFi.mode(WIFI_STA);
