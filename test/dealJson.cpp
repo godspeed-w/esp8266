@@ -6,7 +6,7 @@
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   DynamicJsonDocument doc(1024);
   for (uint8_t t = 4; t > 0; t--)
   {
