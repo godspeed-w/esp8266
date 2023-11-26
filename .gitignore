@@ -13,3 +13,5 @@ html
 Doxyfile*
 doxygen_sqlite3.db
 html
+a.out
+
