@@ -26,7 +26,7 @@ void setup()
     WiFiMulti.addAP("TEST", "password");
     if ((WiFiMulti.run() == WL_CONNECTED))
     {
-        Serial.print("ESP8266 Connected to ");
+        Serial.print("ESP8266 Connected to:");
         Serial.println(WiFi.SSID()); // WiFi名称
         Serial.print("IP address:\t");
         Serial.println(WiFi.localIP()); // 打印出IP
