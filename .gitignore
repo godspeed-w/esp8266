@@ -5,13 +5,11 @@
 .devcontainer
 default.vim
 fontconvert/fontconvert
-# Our handy .gitignore for automation ease
 Doxyfile*
 doxygen_sqlite3.db
 html
-# Our handy .gitignore for automation ease
-Doxyfile*
-doxygen_sqlite3.db
-html
-a.out
+*.out
+testC.cpp
+
+
 

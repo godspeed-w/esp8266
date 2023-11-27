@@ -12,3 +12,4 @@ bool initConnectWifi();
 
 void initOled(Adafruit_SSD1306 dispaly);
 void oledShow(Adafruit_SSD1306 dispaly, int TextSize, int x, int y, String content);
+void getDayAndTime(String timeSatmp);
