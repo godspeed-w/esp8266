@@ -10,6 +10,4 @@ doxygen_sqlite3.db
 html
 *.out
 testC.cpp
-
-
-
+*.exe

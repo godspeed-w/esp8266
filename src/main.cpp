@@ -96,6 +96,9 @@ void oledShowDateAndTime(Adafruit_SSD1306 *display, int TextSize, int x, int y)
 
 /***************全局变量**********************************/
 Adafruit_SSD1306 OLED(128, 64, &Wire, -1);
+int ledState = LOW;
+unsigned long previousMillis = 0;
+const long interval = 1000;
 /***************主程序**********************************/
 void setup()
 {
@@ -111,14 +114,23 @@ void setup()
 
   syncNetWorkTime();
   printLocalTime();
+
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop()
 {
-  delay(500);
-  OLED.clearDisplay();
-  printLocalTime();
-  oledShowDateAndTime(&OLED, 2, 0, 15);
-  oledShow(&OLED, 1, 0, 56, WiFi.localIP().toString());
-  OLED.display();
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= interval)
+  {
+    previousMillis = currentMillis;
+    ledState = ~ledState;
+    digitalWrite(LED_BUILTIN, ledState);
+
+    OLED.clearDisplay();
+    printLocalTime();
+    oledShowDateAndTime(&OLED, 2, 0, 15);
+    oledShow(&OLED, 1, 0, 56, WiFi.localIP().toString());
+    OLED.display();
+  }
 }
